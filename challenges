@@ -1,0 +1,97 @@
+# 🚧 Challenges Faced
+
+Developing an autonomous maze-solving robot involved several practical challenges beyond simply launching the Navigation2 stack. Some of the key issues encountered during development are listed below.
+
+## 1. Designing a Custom Gazebo Maze
+- Built a custom maze environment (`train_maze.sdf`) suitable for autonomous navigation.
+- Ensured proper wall placement and collision models.
+- Configured the world to work seamlessly with TurtleBot3.
+
+---
+
+## 2. Robot Spawn Configuration
+- Integrated TurtleBot3 into the custom Gazebo world.
+- Resolved issues related to robot spawning, initial pose configuration, and simulation startup.
+
+---
+
+## 3. Navigation2 Configuration
+- Configured the complete Navigation2 (Nav2) stack for the custom environment.
+- Tuned planner and controller parameters for reliable navigation.
+- Ensured compatibility with the custom map and simulation setup.
+
+---
+
+## 4. Map Generation and Localization
+- Generated an occupancy grid map of the environment.
+- Configured map loading and localization for accurate robot positioning.
+- Verified coordinate frame consistency between Gazebo, map, and RViz.
+
+---
+
+## 5. TF Frame Management
+- Resolved transform (TF) issues between:
+  - `map`
+  - `odom`
+  - `base_link`
+  - `laser`
+- Ensured the TF tree remained consistent throughout navigation.
+
+---
+
+## 6. Sensor Integration
+- Configured the LiDAR sensor for obstacle detection.
+- Verified LaserScan data publication and visualization in RViz.
+- Fixed scan-related issues affecting localization and planning.
+
+---
+
+## 7. Costmap Optimization
+- Tuned global and local costmaps.
+- Adjusted inflation radius and obstacle layers.
+- Improved navigation performance in narrow maze corridors.
+
+---
+
+## 8. Path Planning in Narrow Passages
+- Optimized planner parameters to generate smooth and collision-free paths.
+- Reduced oscillations while navigating tight turns.
+- Improved goal-reaching accuracy.
+
+---
+
+## 9. Launch File Organization
+- Structured launch files for easier execution.
+- Managed dependencies between Gazebo, Nav2, RViz, and robot initialization.
+
+---
+
+## 10. Debugging Navigation Failures
+During development, several navigation-related issues were identified and resolved, including:
+- Missing TF transforms
+- Duplicate ROS 2 nodes
+- Incorrect topic remapping
+- Navigation startup failures
+- Costmap initialization errors
+- Robot localization inconsistencies
+- Controller configuration issues
+
+Systematic debugging using ROS 2 CLI tools (`ros2 topic`, `ros2 node`, `ros2 service`, and `tf2`) helped identify and resolve these problems.
+
+---
+
+## ✅ Key Learning Outcomes
+
+This project provided hands-on experience with:
+
+- ROS 2 software architecture
+- Navigation2 (Nav2)
+- Gazebo simulation
+- TurtleBot3 integration
+- Robot localization
+- Costmap tuning
+- TF debugging
+- Autonomous navigation
+- Path planning
+- Robotics system integration
+- Debugging complex ROS 2 applications
