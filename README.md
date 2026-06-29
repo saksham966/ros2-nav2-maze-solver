@@ -263,49 +263,7 @@ Use the **2D Goal Pose** tool to select a destination inside the maze. The robot
 
 ---
 
-# 📸 Screenshots
 
-## Gazebo Simulation
-
-> *(Insert screenshot here)*
-
----
-
-## RViz Navigation
-
-> *(Insert screenshot here)*
-
----
-
-## Planned Path
-
-> *(Insert screenshot here)*
-
----
-
-## Goal Reached
-
-> *(Insert screenshot here)*
-
----
-
-# 🎥 Demo
-
-Add your demo GIF or video here.
-
-Example:
-
-```
-images/demo.gif
-```
-
-or
-
-```
-demo.mp4
-```
-
----
 
 # 🧠 Skills Demonstrated
 
@@ -350,9 +308,9 @@ demo.mp4
 
 Robotics | ROS 2 | Autonomous Navigation | AI | Computer Vision | Quantum Computing
 
-GitHub: https://github.com/<YOUR_USERNAME>
+GitHub: https://github.com/saksham966
 
-LinkedIn: https://linkedin.com/in/<YOUR_LINKEDIN>
+
 
 ---
 
