@@ -310,8 +310,6 @@ Robotics | ROS 2 | Autonomous Navigation | AI | Computer Vision | Quantum Comput
 
 GitHub: https://github.com/saksham966
 
-
-
 ---
 
 # ⭐ If you found this project helpful
