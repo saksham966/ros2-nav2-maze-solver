@@ -1,0 +1,145 @@
+# 📦 Installation
+
+## Prerequisites
+
+Before running this project, ensure the following software is installed:
+
+- Ubuntu 22.04 LTS
+- ROS 2 Humble Hawksbill
+- Gazebo
+- Navigation2 (Nav2)
+- TurtleBot3 Packages
+- RViz2
+- Colcon Build Tools
+- Git
+
+---
+
+## Step 1: Create a ROS 2 Workspace
+
+```bash
+mkdir -p ~/turtlebot3_ws/src
+cd ~/turtlebot3_ws/src
+```
+
+---
+
+## Step 2: Clone the Repository
+
+```bash
+git clone https://github.com/<YOUR_GITHUB_USERNAME>/ros2-nav2-maze-solver.git
+```
+
+---
+
+## Step 3: Return to the Workspace
+
+```bash
+cd ~/turtlebot3_ws
+```
+
+---
+
+## Step 4: Install Dependencies
+
+```bash
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+---
+
+## Step 5: Build the Workspace
+
+```bash
+colcon build --symlink-install
+```
+
+---
+
+## Step 6: Source the Workspace
+
+```bash
+source install/setup.bash
+```
+
+To avoid sourcing every time you open a new terminal, add it to your `.bashrc`:
+
+```bash
+echo "source ~/turtlebot3_ws/install/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+---
+
+## Step 7: Set TurtleBot3 Model
+
+```bash
+export TURTLEBOT3_MODEL=burger
+```
+
+To make this permanent:
+
+```bash
+echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
+source ~/.bashrc
+```
+
+---
+
+# 🚀 Running the Project
+
+## Launch the Custom Gazebo World
+
+```bash
+ros2 launch my_maze_sim turtlebot3_my_world.launch.py
+```
+
+---
+
+## Launch Navigation2
+
+Open a new terminal:
+
+```bash
+cd ~/turtlebot3_ws
+source install/setup.bash
+
+ros2 launch turtlebot3_navigation2 navigation2.launch.py \
+use_sim_time:=True \
+map:=~/turtlebot3_ws/src/my_maze_sim/maps/my_map.yaml
+```
+
+---
+
+## Launch RViz (if it doesn't open automatically)
+
+```bash
+rviz2
+```
+
+---
+
+## Navigate the Robot
+
+1. Select the **2D Goal Pose** tool in RViz.
+2. Click on any reachable location inside the maze.
+3. The robot will autonomously:
+   - Plan the optimal path.
+   - Avoid obstacles.
+   - Navigate through the maze.
+   - Reach the selected destination.
+
+---
+
+# ✅ Expected Output
+
+After launching the project successfully, you should observe:
+
+- Gazebo opens with the custom maze.
+- TurtleBot3 spawns inside the environment.
+- Navigation2 initializes successfully.
+- RViz displays the map, robot model, and costmaps.
+- The robot plans a path after a goal is selected.
+- The robot reaches the destination while avoiding obstacles.
+
